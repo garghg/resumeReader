@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
     <h1 class=".dm-serif-text-regular">Welcome to Resume Scanner</h1>
     <form  id="form" action="#" method="post" enctype="multipart/form-data">
         <label for="resume" class="custom-file-upload">
-            Upload File
+            Upload Resume PDF
         </label>
-        <input type="file" accept=".pdf" name="resume" id="resume" style="display: none;" required>
+        <input type="file" accept=".pdf" name="resume" id="resume" required>
         <textarea name="jobDesc" id="jobDesc" rows="6" cols="40" wrap="soft" placeholder="Enter Job Description Here" required></textarea>
         <input type="submit" id="submit">
     </form>

@@ -24,7 +24,7 @@ def main():
                 session['score'] = compare(filepath, text)
                 return redirect(url_for("home"))
             else:
-                print('error')     
+                print('error')
     else:
         return render_template("index.html")
     

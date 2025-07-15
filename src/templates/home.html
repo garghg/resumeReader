@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Scanner</title>
 </head>
 <body>
     <h1>Home</h1>
-    <p>Your current resume is a {{score}}% match for this job.</p>
+    <div id="chartDiv"><canvas id="myChart"></canvas></div>
+    <p id="score">Your current resume is a {{score}}% match for this job.</p>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+    let score = '{{score}}'
+</script>
+<script src="../static/js/home.js"></script>
 </html>
