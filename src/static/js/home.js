@@ -19,9 +19,9 @@ var myChart = new Chart(ctx, {
             legend: {
                 labels: {
                     font: {
-                        family: 'DM Serif Text'
+                        family: 'DM Serif Text' //set legend fon family
                     },
-                    color: 'white'
+                    color: 'white' // set legend font color
                 }
             }
         }
