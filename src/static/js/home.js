@@ -3,15 +3,27 @@ var ctx = document.getElementById('myChart').getContext('2d');
 
 // Create a new Chart object
 var myChart = new Chart(ctx, {
-type: 'doughnut', // The type of chart we want to create
-data: {
-    labels: ['Match', 'Not Matched'], // Labels for the chart
-    datasets: [{
-        data: [score, 100-score], // Data points for the chart
-        backgroundColor: [
-            'rgba(255, 255, 255, 1)',
-            'rgba(0, 0, 0, 0.5)',
-        ],
-    }]
-}
+    type: 'doughnut', // The type of chart we want to create
+    data: {
+        labels: ['Match', 'Not Matched'], // Labels for the chart
+        datasets: [{
+            data: [score, 100-score], // Data points for the chart
+            backgroundColor: [
+                '#ffffff',
+                '#219ebc',
+            ],
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        family: 'DM Serif Text'
+                    },
+                    color: 'white'
+                }
+            }
+        }
+    }
 });
