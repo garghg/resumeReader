@@ -119,8 +119,9 @@ TRAIN_DATA = [
     ("Familiarity with biometric authentication systems and facial recognition.", {"entities": [(18, 50, "SKILL"), (55, 73, "SKILL")]}),
 ]
 
+
 # Load a pretrained SpaCy model or create a blank one.
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_trf")
 
 # Add or get the Named Entity Recognizer (NER) pipeline component.
 if 'ner' not in nlp.pipe_names:
@@ -135,10 +136,10 @@ for text, annotations in TRAIN_DATA:
             ner.add_label(ent[2]) 
 
 # Disable other pipeline components during training for better performance.
-other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
+other_pipes = [pipe for pipe in nlp.pipe_names if pipe not in ["ner", "transformer"]]
 with nlp.disable_pipes(*other_pipes):
     # Initialize the optimizer to start training.
-    optimizer = nlp.begin_training()
+    optimizer = nlp.resume_training()
 
     # Train your model over multiple epochs, updating it with your training data.
     epochs = 50
