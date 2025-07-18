@@ -13,12 +13,24 @@
     <title>Resume Scanner</title>
 </head>
 <body>
-    <!-- page heading -->
-    <h1>Home</h1>
-    <!-- place chart in div for styling -->
-    <div id="chartDiv"><canvas id="myChart"></canvas></div>
-    <!-- display matching resume and job desc score -->
-    <p id="scoreText">Your current resume is a <u id="score">{{score}}%</u> match for this job.</p>
+    <div id="scoreAndChart">
+        <!-- page heading -->
+        <h1>Home</h1>
+        <!-- place chart in div for styling -->
+        <div id="chartDiv"><canvas id="myChart"></canvas></div>
+        <!-- display matching resume and job desc score -->
+        <p id="scoreText">Your current resume is a <u id="score">{{score}}%</u> match for this job.</p>
+    </div>
+    <div id="results">
+        <h1 id="kws">Suggested skills to add to resume:</h1>
+        <p id="note"><i>Please note: The model's outputs may occasionally contain inaccuracies or unexpected results.</i></p>
+        <ul id="skill_list">
+            {% for skill in skills %}
+                <li>{{skill}}</li>
+            {%endfor%}
+        </ul>
+        
+    </div>
 </body>
 <!-- import chart js to graph the score -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
