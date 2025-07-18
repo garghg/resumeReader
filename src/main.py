@@ -21,7 +21,7 @@ def main():
             filepath = os.path.join(UPLOAD_FOLDER, filename)
             file.save(filepath)  # save the file on your server
             if text:
-                session['score'] = compare(filepath, text)
+                session['score'], session['skills'] = compare(filepath, text)
                 return redirect(url_for("home"))
             else:
                 print('error')
@@ -31,7 +31,7 @@ def main():
 @app.route("/home")
 def home():
     if 'score' in session:
-        return render_template("home.html", score=session['score'])
+        return render_template("home.html", score=session['score'], skills=session['skills'])
     else:
         return redirect(url_for('main'))
 
