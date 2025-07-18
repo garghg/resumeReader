@@ -1,3 +1,5 @@
+# If unable to use uploaded model, please run model.py to train your custom NER model before running this. It may take several minutes to train. 
+
 from flask import Flask, render_template, request, redirect, session, url_for
 from resume import compare
 from werkzeug.utils import secure_filename
